@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backend-tests-go-cwmhklqa-gitops
+  description: This is GitOps manifest for backend-tests-go-cwmhklqa   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=backend-tests-go-cwmhklqa
+    backstage.io/kubernetes-id: backend-tests-go-cwmhklqa 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: backend-tests-go-cwmhklqa
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:backend-tests-go-cwmhklqa
